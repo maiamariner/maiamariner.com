@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works | Maia Mariner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="nav">
+    <a class="logo" href="index.html">MM</a>
+
+    <nav>
+      <a href="works.html">Works</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <span class="dot"></span>
+  </header>
+
+ 
+<main class="works-page">
+
+  <section class="project-header">
+    <h1>iheartlocal issue one: maiya mason <span>(2026)</span></h1>
+    <p>
+      A lookbook highlighting locally-owned and/or sustainable labels in Aotearoa, featuring the wardrobe of fashion and lifestyle content creator Maiya Mason. Words by Wendy Zhang. </p>
+  </section>
+
+  <section class="project-grid">
+    <img src="images/magazine1.jpg" alt="">
+    <img src="images/magazine2.jpg" alt="">
+    <img src="images/magazine3.jpg" alt="">
+    <img src="images/magazine4.jpg" alt="">
+    <img src="images/magazine1.jpg" alt="">
+    <img src="images/magazine2.jpg" alt="">
+    <img src="images/magazine3.jpg" alt="">
+    <img src="images/magazine4.jpg" alt="">
+    <img src="images/magazine1.jpg" alt="">
+    <img src="images/magazine2.jpg" alt="">
+    <img src="images/magazine3.jpg" alt="">
+    <img src="images/magazine4.jpg" alt="">
+    <img src="images/magazine1.jpg" alt="">
+    <img src="images/magazine2.jpg" alt="">
+    <img src="images/magazine3.jpg" alt="">
+    <img src="images/magazine4.jpg" alt="">
+    <img src="images/magazine1.jpg" alt="">
+    <img src="images/magazine2.jpg" alt="">
+    <img src="images/magazine3.jpg" alt="">
+    <img src="images/magazine4.jpg" alt="">
+  </section>
+
+</main>
+
+  </main>
+
+  <footer>
+    <p>© Maia Mariner</p>
+    <p>Auckland, NZ</p>
+    <p>Email · Instagram</p>
+  </footer>
+
+  
+<div id="worksViewer" class="works-viewer">
+  <span class="close" onclick="closeWorksViewer()">×</span>
+  <button class="arrow left" onclick="changeWork(-1)">‹</button>
+  <img id="worksViewerImg">
+  <button class="arrow right" onclick="changeWork(1)">›</button>
+</div>
+
+<script>
+  const workImages = [
+    "images/Maiya Mason Looking Away.png",
+    "images/work2.jpg",
+    "images/work3.jpg"
+  ];
+
+  let currentWork = 0;
+
+  function openWorksViewer(index) {
+    currentWork = index;
+    document.getElementById("worksViewerImg").src = workImages[currentWork];
+    document.getElementById("worksViewer").style.display = "flex";
+  }
+
+  function closeWorksViewer() {
+    document.getElementById("worksViewer").style.display = "none";
+  }
+
+  function changeWork(direction) {
+    currentWork += direction;
+
+    if (currentWork < 0) {
+      currentWork = workImages.length - 1;
+    }
+
+    if (currentWork >= workImages.length) {
+      currentWork = 0;
+    }
+
+    document.getElementById("worksViewerImg").src = workImages[currentWork];
+  }
+</script>
+
+</body>
+
+</html>
